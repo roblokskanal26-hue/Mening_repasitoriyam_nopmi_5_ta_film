@@ -1,0 +1,14 @@
+const express = require('express');
+
+const app = express();
+const port = 3000;
+
+app.get('/frends', (req, res) => {
+    res.sendFile("do'stlar.html" );
+});
+app.get('/error', (req, res) => {
+    res.sendStatus("404")
+});
+app.listen(port, (err) => {
+    console.log('http://localhost:3000');
+});
