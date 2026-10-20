@@ -1,20 +1,43 @@
 const express = require('express');
-import ServerlessHttp from 'serverless-http';
+const ServerlessHttp = require('serverless-http');
 const app = express();
-
-
+const films = [
+    {
+        nomi: "Interstellar",
+        janr: "Fantastika",
+        yil: 2014,
+        reyting: 8.7
+    },
+    {
+        nomi: "Inception",
+        janr: "Fantastika",
+        yil: 2010,
+        reyting: 8.8
+    },
+    {
+        nomi: "Titanic",
+        janr: "Romantika",
+        yil: 1997,
+        reyting: 7.9
+    },
+    {
+        nomi: "The Dark Knight",
+        janr: "Jangari",
+        yil: 2008,
+        reyting: 9.0
+    },
+    {
+        nomi: "Avatar",
+        janr: "Fantastika",
+        yil: 2009,
+        reyting: 7.9
+    }
+];
 app.get('/', (req, res) => {
-    res.send(Salom);
+    res.send("Salom");
 });
-app.get('/About', (req, res) => {
-    res.json({
-        name:"Muhammadyunus",
-        age:"16",
-        hobbiy:{
-            "1":"Gaming",
-            "2":"Coding"
-        }
-    });
+app.get('/films', (req, res) => {
+    res.json(films);
 });
 
-export const handler = ServerlessHttp(app)
+module.exports.handler = ServerlessHttp(app);
