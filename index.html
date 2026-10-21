@@ -5,7 +5,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+<style>
+    body{
+        display:flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+    form{
+        margin-top: 25%;
+    }
+</style>
 <body>
-    
+   <form action="/login" method="POST"></form>
+   <input type="text" name="login" placeholder="login" required><br><br>
+    <input type="password" name="password" placeholder="Pro'lni kiriting" required><br><br>
+    <button type="submit">Yuborish</button>
 </body>
 </html>

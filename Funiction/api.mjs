@@ -1,43 +1,30 @@
-const express = require('express');
-const ServerlessHttp = require('serverless-http');
+import math from 'path';
+import bodyParser from 'body-parser';
+express = require('express');
 const app = express();
-const films = [
-    {
-        nomi: "Interstellar",
-        janr: "Fantastika",
-        yil: 2014,
-        reyting: 8.7
-    },
-    {
-        nomi: "Inception",
-        janr: "Fantastika",
-        yil: 2010,
-        reyting: 8.8
-    },
-    {
-        nomi: "Titanic",
-        janr: "Romantika",
-        yil: 1997,
-        reyting: 7.9
-    },
-    {
-        nomi: "The Dark Knight",
-        janr: "Jangari",
-        yil: 2008,
-        reyting: 9.0
-    },
-    {
-        nomi: "Avatar",
-        janr: "Fantastika",
-        yil: 2009,
-        reyting: 7.9
-    }
-];
+const __dirname = path.resolve();
+
+app.use(bodyParser.json())
+app.use(bodyParser.urlencoded({extended: true}))
+    
+
 app.get('/', (req, res) => {
-    res.send("Salom");
+    res.sendFile(__dirname + '/dist/index.html');
 });
-app.get('/films', (req, res) => {
-    res.json(films);
+app.get('/login', (req, res) => {
+    const {login,password}=req.body; 
+    const USER = {login,password};
+    if(USER.login ==='admin'&& USER.password ==='admin123'){
+        res.redirect("/home")
+    }else{
+        res.send('You are not allowerd!')
+    }
 });
 
-module.exports.handler = ServerlessHttp(app);
+//app.get('/films', (req, res) => {
+ //   res.json(films);
+//});
+
+app.listen(3000, () => {
+    console.log('Film API: http://localhost:3000');
+});

@@ -2,9 +2,9 @@
   "name": "bacend",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "api.js",
   "scripts": {
-    "start": "nodemon postmna.js"
+    "start": "nodemon api.js"
   },
   "keywords": [],
   "author": "",
@@ -12,9 +12,16 @@
   "type": "commonjs",
   "dependencies": {
     "body-parser": "^2.3.0",
-    "expres": "^0.0.5",
     "express": "^5.2.1",
     "nodemon": "^3.1.14",
     "serverless-http": "^4.0.0"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/roblokskanal26-hue/Mening_repasitoriyam_nopmi_5_ta_film.git"
+  },
+  "bugs": {
+    "url": "https://github.com/roblokskanal26-hue/Mening_repasitoriyam_nopmi_5_ta_film/issues"
+  },
+  "homepage": "https://github.com/roblokskanal26-hue/Mening_repasitoriyam_nopmi_5_ta_film#readme"
 }
